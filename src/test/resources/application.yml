@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:tc:postgresql:15:///testdb
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 100
+  flyway:
+    enabled: true
+
+app:
+  encryption:
+    master-key: dGVzdC1tYXN0ZXIta2V5LWZvci10ZXN0aW5nLXB1cnBvc2VzLTEyMzQ1Njc4
+  jwt:
+    secret: dGhpcyBpcyBhIHRlc3Qgand0IHNlY3JldCBrZXkgZm9yIGRldmVsb3BtZW50
+    expiration-ms: 86400000
